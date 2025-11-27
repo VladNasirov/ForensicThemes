@@ -4,9 +4,9 @@ from pathlib import Path
 
 # ========= НАСТРОЙКИ =========
 DEPTARTMENT_NAME = "Forensic"
-INPUT_JSON = "../themes.json"
-OUT_KOTLIN_DIR = "out_kotlin"
-OUT_WEB_DIR = "web"
+INPUT_JSON = "themes.json"
+OUT_KOTLIN_DIR = "Kotlin"
+OUT_WEB_DIR = "WEB"
 OUT_TS_DIR = "ts"
 OUT_CSS_DIR = "css"
 PACKAGE_NAME = "com.example.compose"
