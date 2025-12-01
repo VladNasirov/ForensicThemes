@@ -324,6 +324,7 @@ private val darkMediumContrastScheme = darkColorScheme(
     surface-container = surface-containerDarkMediumContrast,
     surface-container-high = surface-container-highDarkMediumContrast,
     surface-container-highest = surface-container-highestDarkMediumContrast,
+    some-color = some-colorDarkMediumContrast,
 )
 
 @Immutable

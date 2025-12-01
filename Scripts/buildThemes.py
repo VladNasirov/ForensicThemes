@@ -243,9 +243,12 @@ def main():
         # определяем группу и цвет для структуры папок
         group_name_folder = name.lower()
 
+        # название группы для вебки удобнее будет использовать camel case поэтому добавим еще и такую переменную
+        group_name_folder_camel = to_camel(group_name_folder)
+
         # папки для web/css и web/ts
-        web_css_dir = Path(OUT_WEB_DIR) / OUT_CSS_DIR / group_name_folder
-        web_ts_dir = Path(OUT_WEB_DIR) / OUT_TS_DIR / group_name_folder
+        web_css_dir = Path(OUT_WEB_DIR) / OUT_CSS_DIR / group_name_folder_camel
+        web_ts_dir = Path(OUT_WEB_DIR) / OUT_TS_DIR / group_name_folder_camel
 
         # папка для Kotlin остается отдельно
         kt_out_dir = Path(OUT_KOTLIN_DIR) / group_name_folder
