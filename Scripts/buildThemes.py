@@ -56,7 +56,8 @@ def sync_palette_group(group: dict):
 # --------------------------------------------------------------
 def gen_kotlin_colors(theme_name: str, palettes: dict) -> str:
     kt_name = to_camel(theme_name)
-    lines = [f"package {PACKAGE_NAME}", "", "import androidx.compose.ui.graphics.Color", ""]
+    lines = [f"package {PACKAGE_NAME}", "",
+             "import androidx.compose.ui.graphics.Color", ""]
 
     for mode, groups in palettes.items():
         for palette_name, palette in groups.items():
@@ -67,8 +68,10 @@ def gen_kotlin_colors(theme_name: str, palettes: dict) -> str:
                 suffix = "MediumContrast"
             for k, v in palette.items():
                 color_name = f"{k}{mode.capitalize()}{suffix}"
-                lines.append(f"val {color_name} = Color({v})")  # v должен быть 0xFFRRGGBB
+                # v должен быть 0xFFRRGGBB
+                lines.append(f"val {color_name} = Color({v})")
     return "\n".join(lines)
+
 
 def gen_kotlin_theme_full(theme_name: str, palettes: dict) -> str:
     kt_name = to_camel(theme_name)
@@ -88,7 +91,6 @@ def gen_kotlin_theme_full(theme_name: str, palettes: dict) -> str:
              "import androidx.compose.ui.graphics.toArgb",
              "import androidx.compose.ui.platform.LocalContext",
              ""]
-
 
     # ---------------- ColorSchemes ----------------
     for mode, groups in palettes.items():
@@ -153,7 +155,7 @@ def gen_kotlin_theme_full(theme_name: str, palettes: dict) -> str:
 
     return "\n".join(lines)
 
-    
+
 def gen_kotlin_type() -> str:
     lines = [
         f"package {PACKAGE_NAME}",
@@ -170,6 +172,8 @@ def gen_kotlin_type() -> str:
 # --------------------------------------------------------------
 # ГЕНЕРАЦИЯ CSS
 # --------------------------------------------------------------
+
+
 def gen_css_files(palettes: dict):
     outputs = {}
     for mode, groups in palettes.items():
@@ -204,6 +208,7 @@ def snake_case_to_camel(snake_string):
     words = snake_string.split('-')
     camel_case_words = [words[0]] + [word.capitalize() for word in words[1:]]
     return "".join(camel_case_words)
+
 
 def gen_ts_interface(theme_name: str, palettes: dict) -> str:
     """
@@ -247,8 +252,8 @@ def main():
         group_name_folder_camel = to_camel(group_name_folder)
 
         # папки для web/css и web/ts
-        web_css_dir = Path(OUT_WEB_DIR) / OUT_CSS_DIR / group_name_folder_camel
-        web_ts_dir = Path(OUT_WEB_DIR) / OUT_TS_DIR / group_name_folder_camel
+        web_css_dir = Path(OUT_WEB_DIR) / group_name_folder_camel / OUT_CSS_DIR
+        web_ts_dir = Path(OUT_WEB_DIR) / group_name_folder_camel
 
         # папка для Kotlin остается отдельно
         kt_out_dir = Path(OUT_KOTLIN_DIR) / group_name_folder
@@ -266,8 +271,8 @@ def main():
         # Kotlin
         kt_out_dir = Path(OUT_KOTLIN_DIR) / group_name_folder
         kt_out_dir.mkdir(parents=True, exist_ok=True)
-        
-        #Color.kt
+
+        # Color.kt
         kt_colors_code = gen_kotlin_colors(name, palettes)
         with open(kt_out_dir / "Color.kt", "w", encoding="utf-8") as f:
             f.write(kt_colors_code)

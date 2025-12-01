@@ -34,7 +34,6 @@ export default interface IForensicGreenColors {
   secondaryFixed: string;
   secondaryFixedDim: string;
   shadow: string;
-  someColor: string;
   surface: string;
   surfaceBright: string;
   surfaceContainer: string;
