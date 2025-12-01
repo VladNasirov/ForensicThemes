@@ -7,6 +7,7 @@ INPUT_JSON = "themes.json"
 OUT_WEB_DIR = "WEB"
 OUT_TS_DIR = "ts"
 OUT_CSS_DIR = "css"
+OUT_TS_CONFIG_FILENAME = "config.ts"
 
 # Kotlin
 OUT_KOTLIN_DIR = "Kotlin"
