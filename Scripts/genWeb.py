@@ -58,7 +58,7 @@ def gen_ts_interface(theme_name: str, palettes: dict) -> str:
     # Преобразуем в camelCase и отсортируем
     camel_keys = sorted(snake_case_to_camel(k) for k in all_keys)
 
-    lines = [f"export default interface IThemeConfig {{"]
+    lines = [f"export interface IThemeConfig {{"]
     for key in camel_keys:
         lines.append(f"  {key}: string;")
     lines.append("}")

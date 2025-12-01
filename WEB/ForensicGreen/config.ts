@@ -1,4 +1,4 @@
-export default interface IThemeConfig {
+export interface IThemeConfig {
   background: string;
   error: string;
   errorContainer: string;
