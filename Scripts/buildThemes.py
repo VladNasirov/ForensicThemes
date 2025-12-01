@@ -288,7 +288,7 @@ def main():
 
         # TypeScript
         ts_code = gen_ts_interface(name, palettes)
-        ts_filename = f"{to_camel(name)}.ts"
+        ts_filename = "index.ts"
         with open(web_ts_dir / ts_filename, "w", encoding="utf-8") as f:
             f.write(ts_code)
 
