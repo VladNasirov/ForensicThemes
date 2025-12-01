@@ -1,4 +1,4 @@
-export default interface IForensicBlueColors {
+export default interface IThemeConfig {
   background: string;
   error: string;
   errorContainer: string;

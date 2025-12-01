@@ -7,7 +7,6 @@ from genWeb import *
 from genKotlin import *
 from genWeb import *
 
-
 Path(OUT_KOTLIN_DIR).mkdir(exist_ok=True, parents=True)
 Path(OUT_WEB_DIR).mkdir(exist_ok=True, parents=True)
 
@@ -70,7 +69,8 @@ def main():
 
         # TypeScript
         ts_code = gen_ts_interface(name, palettes)
-        ts_filename = "index.ts"
+        ts_filename = OUT_TS_CONFIG_FILENAME
+
         with open(web_ts_dir / ts_filename, "w", encoding="utf-8") as f:
             f.write(ts_code)
 
