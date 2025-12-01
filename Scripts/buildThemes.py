@@ -244,8 +244,8 @@ def main():
         group_name_folder = name.lower()
 
         # папки для web/css и web/ts
-        web_css_dir = Path(OUT_WEB_DIR) / "css" / group_name_folder
-        web_ts_dir = Path(OUT_WEB_DIR) / "ts" / group_name_folder
+        web_css_dir = Path(OUT_WEB_DIR) / OUT_CSS_DIR / group_name_folder
+        web_ts_dir = Path(OUT_WEB_DIR) / OUT_TS_DIR / group_name_folder
 
         # папка для Kotlin остается отдельно
         kt_out_dir = Path(OUT_KOTLIN_DIR) / group_name_folder
