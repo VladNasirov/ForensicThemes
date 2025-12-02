@@ -1,4 +1,5 @@
 export interface IThemeConfig {
+  aColor: string;
   background: string;
   error: string;
   errorContainer: string;
@@ -24,6 +25,7 @@ export interface IThemeConfig {
   onTertiaryFixedVariant: string;
   outline: string;
   outlineVariant: string;
+  pizhnyaColor: string;
   primary: string;
   primaryContainer: string;
   primaryFixed: string;

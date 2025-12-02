@@ -25,22 +25,6 @@ def gen_css_files(palettes: dict):
 # --------------------------------------------------------------
 # ГЕНЕРАЦИЯ TypeScript интерфейсов
 # --------------------------------------------------------------
-
-def snake_case_to_camel(snake_string):
-    """
-    Converts a string from snake-case to lower camelCase.
-
-    Args:
-        kebab_string (str): The input string in kebab-case.
-
-    Returns:
-        str: The converted string in lower camelCase.
-    """
-    words = snake_string.split('-')
-    camel_case_words = [words[0]] + [word.capitalize() for word in words[1:]]
-    return "".join(camel_case_words)
-
-
 def gen_ts_interface(theme_name: str, palettes: dict) -> str:
     """
     Генерирует TS интерфейс с ключами всех цветов, в camelCase,
