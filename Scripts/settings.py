@@ -13,6 +13,6 @@ OUT_CSS_DIR = "css"
 OUT_TS_CONFIG_FILENAME = "config.ts"
 
 # Kotlin
-OUT_KOTLIN_DIR = "Kotlin"
+OUT_KOTLIN_DIR = PROJECT_ROOT / "Kotlin"
 PACKAGE_NAME = "com.example.compose"
 # =============================
